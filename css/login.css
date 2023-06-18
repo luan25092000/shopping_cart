@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 20%;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 70px;
+    background-color: #f8e4e4;
+}
+
+.forma {
+    width: 100%;
+    margin-left: 20px;
+}
+
+.forma div {
+    margin-bottom: 20px;
+}
+
+.input, .select {
+    display: block;
+    outline: none;
+    padding: 10px;
+    background-color: rgb(225, 217, 248);
+    border: none;
+    margin: 5px;
+    align-content: center;
+}
+
+.input {
+    width: 300px;
+}
+
+
+#submitBtnLogin {
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: #c7c0ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#submitBtnLogin:hover {
+    background: plum;
+}
+
+/* Menu */
+
+.menu {
+    background-color: black;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.menu li a:hover {
+    color: rgb(28, 134, 255);
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    box-sizing: border-box;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.col {
+    width: calc(100% / 4);
+    margin: 20px;
+}
+
+.col-title {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.col-content {
+    line-height: 1.5;
+}
+
+.zalo {
+    position: fixed;
+    width: 70px;
+    left: 94%;
+    top: 74%;
+}
