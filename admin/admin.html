@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator</title>
+    <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1 class="title">Admin</h1>
+            <button id="logoutBtn">Log out</button>
+        </div>
+
+        <br>
+
+        <div class="form">
+
+            <div class="nameprice">
+                <div>
+                    <label for="name">Name <span style="color: red;">*</span></label><br>
+                    <input class="input" type="text" placeholder="enter product's name" id="productName" />
+                </div>
+                <div>
+                    <label for="price">Price <span style="color: red;">*</span></label><br>
+                    <input class="input" type="text" placeholder="enter product's price" id="productPrice" />
+                </div>
+            </div>
+
+            <div class="salelink">
+                <div>
+                    <label for="salePrice">Sale Price <span style="color: red;">*</span></label><br>
+                    <input class="input" type="text" placeholder="enter product's sale price" id="productSalePrice" />
+                </div>
+                <div>
+                    <label for="link">Link <span style="color: red;">*</span></label><br>
+                    <input class="input" type="text" placeholder="enter product's link" id="productLink" />
+                </div>
+            </div>
+
+            <button type="button" id="addBtn">Add :3</button>
+
+        </div>
+
+        <br>
+
+        <div class="table">
+
+            <input class="input1" type="text" placeholder="search for an item ..." id="searchItem" />
+
+            <br>
+            <br>
+
+            <table>
+                <tr>
+                    <th>ID Product</th>
+                    
+                    <th>Name</th>
+
+                    <th>Price</th>
+
+                    <th>Sale Price</th>
+
+                    <th>Image</th>
+
+                    <th>Action</th>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+    <script src="/admin/js/admin.js"></script>
+</body>
+</html>

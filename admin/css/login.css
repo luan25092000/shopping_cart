@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(175, 218, 203);
+}
+
+h2 {
+    color: rgb(122, 161, 148);
+    font-size: 30px;
+}
+
+.Login {
+    width: 20%;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 250px;
+    background-color: #f8e4e4;
+    border-radius: 10px;
+}
+
+.loginForm {
+    width: 100%;
+    margin-left: 20px;
+}
+
+.loginForm div {
+    margin-bottom: 20px;
+}
+
+.input, .select {
+    display: block;
+    outline: none;
+    padding: 10px;
+    background-color: rgb(225, 217, 248);
+    border: none;
+    margin: 5px;
+    align-content: center;
+}
+
+.input {
+    width: 300px;
+}
+
+
+#submitBtnLogin {
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: #c7c0ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#submitBtnLogin:hover {
+    background: plum;
+}
