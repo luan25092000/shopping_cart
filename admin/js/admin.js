@@ -20,26 +20,30 @@ if (localStorage.getItem('products') != '' && localStorage.getItem('products') !
             <th>Action</th>
         </tr>
     `;
-    for (var x of products) {
-       html += `
-        <tr>
-            <td>${x.productId}</td>
-            <td>${x.productName}</td>
-            <td>
-                ${x.productPrice.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}
-            </td>
-            <td>
-                ${x.productSalePrice > 0 ? x.productSalePrice.toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : ''}
-            </td>
-            <td>
-                <img src="${x.productLink}" width="200">
-            </td>
-            <td>
-                <button onclick="editProduct(${x.productId})">Edit</button>
-                <button onclick="deleteProduct(${x.productId})">Delete</button>
-            </td>
-        </tr>
-       `
+    if (products.length > 0) { // có sản phẩm
+        for (var x of products) {
+            html += `
+             <tr>
+                 <td>${x.productId}</td>
+                 <td>${x.productName}</td>
+                 <td>
+                     ${x.productPrice.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}
+                 </td>
+                 <td>
+                     ${x.productSalePrice > 0 ? x.productSalePrice.toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : ''}
+                 </td>
+                 <td>
+                     <img src="${x.productLink}" width="200">
+                 </td>
+                 <td>
+                     <button onclick="editProduct('${x.productId}')">Edit</button>
+                     <button onclick="deleteProduct('${x.productId}')">Delete</button>
+                 </td>
+             </tr>
+            `
+         }
+    } else {
+        html += '<td align="center" colspan="6">Không có sản phẩm nào</td>';
     }
     document.getElementById('productTable').innerHTML = html;
 }
@@ -137,4 +141,16 @@ if (typeof(addBtn) != 'undefined' && addBtn != null) {
         alert('Add Successfully');
         window.location.href = 'admin.html';
     });
+}
+
+function deleteProduct(productId) {
+    var check = confirm('Bạn có chắc chắn muốn xóa sản phẩm này ?');
+    if (check) { // true
+        var products = JSON.parse(localStorage.getItem('products'));
+        // object
+        var filterProducts = products.filter(product => product.productId != productId);
+        localStorage.setItem('products', JSON.stringify(filterProducts));
+        alert('Delete Successfully');
+        window.location.href = 'admin.html';
+    }
 }
