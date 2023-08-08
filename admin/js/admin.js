@@ -231,7 +231,7 @@ function cancel() {
     document.getElementById('productPrice').value = '';
     document.getElementById('productSalePrice').value = '';
     document.getElementById('productLink').value = '';
-    localStorage.removeItem('productEdit');
+    localStorage.removeItem('productId');
 }
 
 function update() {
