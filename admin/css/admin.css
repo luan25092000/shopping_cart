@@ -73,7 +73,7 @@
     margin-right: 50px;
 }
 
-#addBtn {
+.button {
     padding: 10px;
     border: none;
     outline: none;
@@ -85,8 +85,16 @@
     font-size: 20px;
 }
 
-#addBtn:hover {
+#cancelBtn {
+    background-color: red;
+}
+
+#addBtn:hover, #updateBtn:hover {
     background-color: rgb(199, 162, 206);
+}
+
+#cancelBtn:hover {
+    background-color: rgb(214, 62, 62);
 }
 
 /* table */
@@ -115,4 +123,21 @@ table {
     width: 97%;
     background-color: rgb(219, 236, 229);
     margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#searchBtn {
+    border: none;
+    background-color: rgb(174, 211, 196);
+    padding: 10px;
+    cursor: pointer;
+}
+
+#searchBtn:hover {
+    background-color: rgb(219, 236, 229);
 }

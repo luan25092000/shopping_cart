@@ -40,19 +40,21 @@
                 </div>
             </div>
 
-            <button type="button" id="addBtn">Add :3</button>
+            <button type="button" class="button" id="addBtn">Add :3</button>
+            <div id="updateAndCancel">
+                <button type="button" class="button" onclick="update()" id="updateBtn">Update :3</button>
+                <button type="button" class="button" onclick="cancel()" id="cancelBtn">Cancel :3</button>
+            </div>
 
         </div>
 
         <br>
 
         <div class="table">
-
-            <input class="input1" type="text" placeholder="search for an item ..." id="searchItem" />
-
-            <br>
-            <br>
-
+            <div class="search-container">
+                <input class="input1" type="text" placeholder="search for an item ..." id="searchItem" />
+                <button id="searchBtn">Search</button>
+            </div>
             <table id="productTable">
                 <tr>
                     <th>ID Product</th>
