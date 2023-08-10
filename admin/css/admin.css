@@ -141,3 +141,29 @@ table {
 #searchBtn:hover {
     background-color: rgb(219, 236, 229);
 }
+
+.action {
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.editBtn {
+    background-color: rgb(21, 125, 253);
+}
+
+.deleteBtn {
+    background-color: red;
+}
+
+.deleteBtn:hover {
+    background-color: rgb(166, 11, 11);
+}
+
+.editBtn:hover {
+    background-color: rgb(8, 105, 224);
+}

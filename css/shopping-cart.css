@@ -36,18 +36,21 @@
 .product-container {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .product-child {
-    width: calc(100% / 4);
+    width: calc(100% / 5);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px 20px;
+    margin: 10px 0;
     box-shadow: 1px 1px 5px rgb(0 0 0 / 15%);
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .product-child img {
@@ -64,13 +67,13 @@
     margin: 10px 0;
 }
 
-.price {
+.sale-price {
     color: #ff5b6a;
     font-weight: bold;
     font-size: 22px;
 }
 
-.sale-price {
+.price {
     color: #6b6c6c;
     font-size: 16px;
 }

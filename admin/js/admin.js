@@ -39,8 +39,8 @@ if (localStorage.getItem('products') != '' && localStorage.getItem('products') !
                      <img src="${x.productLink}" width="200">
                  </td>
                  <td>
-                     <button onclick="editProduct('${x.productId}')">Edit</button>
-                     <button onclick="deleteProduct('${x.productId}')">Delete</button>
+                     <button class="action editBtn" onclick="editProduct('${x.productId}')">Edit</button>
+                     <button class="action deleteBtn" onclick="deleteProduct('${x.productId}')">Delete</button>
                  </td>
              </tr>
             `
@@ -240,7 +240,7 @@ function update() {
     for (var key in products) {
         if (products[key].productId === productId) {
             var productName = document.getElementById('productName').value;
-            var productPrice = document.getElementById('productPrice').value;
+            var productPrice = Numberdocument.getElementById('productPrice').value;
             var productSalePrice = document.getElementById('productSalePrice').value;
             var productLink = document.getElementById('productLink').value;
 
@@ -292,8 +292,8 @@ function update() {
             }
 
             products[key].productName = productName;
-            products[key].productPrice = productPrice;
-            products[key].productSalePrice = productSalePrice;
+            products[key].productPrice = Number(productPrice);
+            products[key].productSalePrice = Number(productSalePrice);
             products[key].productLink = productLink;
         }
 
