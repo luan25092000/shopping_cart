@@ -111,6 +111,52 @@
     margin-left: 20px;
 }
 
+.exportBtn {
+    display: block;
+    outline: none;
+    padding: 10px;
+    background-color: rgb(174, 211, 196);
+    border: none;
+    margin: 5px;
+    align-content: center;
+    width: 100px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.importBtn {
+    display: block;
+    outline: none;
+    padding: 10px;
+    background-color: rgb(174, 211, 196);
+    border: none;
+    margin: 5px;
+    align-content: center;
+    width: 100px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.exportBtn:hover {
+    background-color: rgb(219, 236, 229);
+}
+
+.importBtn:hover {
+    background-color: rgb(219, 236, 229);
+}
+
+.input-import {
+    display: block;
+    outline: none;
+    padding: 10px;
+    background-color: rgb(174, 211, 196);
+    border: none;
+    margin: 5px;
+    align-content: center;
+    width: 500px;
+    margin-left: 20px;
+}
+
 table, th, td {
     border: 2px solid rgb(173, 204, 191);
     text-align: center;

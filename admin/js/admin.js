@@ -1,5 +1,6 @@
 document.getElementById('updateAndCancel').style.display = 'none';
 localStorage.removeItem('productId');
+document.getElementById('exportBtn').style.display = 'none';
 
 if (localStorage.getItem('isLogin') === null || localStorage.getItem('isLogin') === 'undefined') {
     alert('Please login !');
@@ -24,6 +25,7 @@ if (localStorage.getItem('products') != '' && localStorage.getItem('products') !
         </tr>
     `;
     if (products.length > 0) { // có sản phẩm
+        document.getElementById('exportBtn').style.display = 'block';
         for (var x of products) {
             html += `
              <tr>
@@ -162,10 +164,6 @@ var searchBtn = document.getElementById('searchBtn');
 if (typeof(searchBtn) != 'undefined' && searchBtn != null) {
     searchBtn.addEventListener('click', function() {
         var searchItem = document.getElementById('searchItem').value.toLowerCase();
-        if (searchItem.length === 0) {
-            alert('Please fill product name in search input');
-            return;
-        }
         var products = JSON.parse(localStorage.getItem('products'));
         // Kiểm tra tên sản phẩm có chứa từ khóa mình search không
         var filterProducts = products.filter(product => product.productName.toLowerCase().indexOf(searchItem) > -1);
@@ -200,8 +198,8 @@ if (typeof(searchBtn) != 'undefined' && searchBtn != null) {
                         <img src="${x.productLink}" width="200">
                     </td>
                     <td>
-                        <button onclick="editProduct('${x.productId}')">Edit</button>
-                        <button onclick="deleteProduct('${x.productId}')">Delete</button>
+                        <button class="action editBtn" onclick="editProduct('${x.productId}')">Edit</button>
+                        <button class="action deleteBtn" onclick="deleteProduct('${x.productId}')">Delete</button>
                     </td>
                 </tr>
                 `
@@ -209,6 +207,7 @@ if (typeof(searchBtn) != 'undefined' && searchBtn != null) {
         } else {
             html += '<td align="center" colspan="6">Không có sản phẩm nào</td>';
         }
+        document.getElementById('productTable').innerHTML = html;
     });
 }
 
@@ -301,4 +300,34 @@ function update() {
         alert('Update Successfully');
         window.location.href = 'admin.html';
     }
+}
+
+function exportData(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+}
+var exportBtn = document.getElementById('exportBtn');
+if (typeof(exportBtn) != 'undefined' && exportBtn != null) {
+    exportBtn.addEventListener('click', function() {
+        exportData('products.json', localStorage.getItem('products'));
+    });
+}
+
+
+var importBtn = document.getElementById('importBtn');
+if (typeof(importBtn) != 'undefined' && importBtn != null) {
+    importBtn.addEventListener('click', function() {
+        var inputImport = document.getElementById('input-import').value;
+        localStorage.setItem('products', inputImport);
+        alert('Import successfully');
+        window.location.href = 'admin.html';
+    });
 }

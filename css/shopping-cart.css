@@ -149,3 +149,32 @@
 #botToTop:hover {
     color: red;
 }
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input1 {
+    display: block;
+    outline: none;
+    padding: 10px;
+    background-color: rgb(174, 211, 196);
+    border: none;
+    margin: 5px;
+    align-content: center;
+    width: 250px;
+    margin-left: 20px;
+}
+
+#searchBtn {
+    border: none;
+    background-color: rgb(174, 211, 196);
+    padding: 10px;
+    cursor: pointer;
+}
+
+#searchBtn:hover {
+    background-color: rgb(219, 236, 229);
+}
